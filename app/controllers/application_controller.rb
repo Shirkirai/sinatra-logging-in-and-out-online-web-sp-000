@@ -19,7 +19,7 @@ class ApplicationController < Sinatra::Base
           #Key name can be anything
         session[:user_id] = @user.id
           redirect to '/account'
-        else
+        end
           erb :error
       end
   end
