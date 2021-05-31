@@ -11,10 +11,10 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/login' do
-    #use find_by allows me to search for attributes while the "find" method only allows finding by id.
+    #use find_by allows me to search for attributes while the "find" method only allows finding by id. find_by will result in "nil" if nothing is found while "find" will returns ActiveRecord::RecordNotFound exception.
       @user = User.find_by(:username => params[:username])
-      if @user
-          session[:username] = @user.id
+      if @user != nil && @user.password == params[:password]
+        session[:user_id] = @user.id
           redirect to '/account'
         else
           erb :error
