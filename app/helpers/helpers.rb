@@ -2,7 +2,7 @@
 
 class Helpers
     def self.current_user(session)
-      params[:user_id] =
+      
 
     end
 
