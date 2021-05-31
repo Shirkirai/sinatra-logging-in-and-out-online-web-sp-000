@@ -13,6 +13,5 @@ class Helpers
       #Then you have !, which is the same but it gives you the opposite boolean value.
       !!session[:user_id]
       #this method will result in "true" if user_id is in the session hash and "false" if it's not.
-
     end
 end
