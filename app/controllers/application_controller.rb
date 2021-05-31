@@ -11,7 +11,8 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/login' do
-      @user = User.find(params[:username])
+    #use find_by allows me to search for attributes while the "find" method only allows finding by id.
+      @user = User.find_by(:username => params[:username])
       if @user
           session[:username] = @user.id
           redirect to '/account'
