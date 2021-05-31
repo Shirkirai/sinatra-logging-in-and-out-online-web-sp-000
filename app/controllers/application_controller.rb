@@ -28,7 +28,7 @@ class ApplicationController < Sinatra::Base
     if @current_user
       erb :account
     else
-      erb:error
+      erb :error
     end
   end
 
