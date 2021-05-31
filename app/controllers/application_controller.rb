@@ -15,8 +15,8 @@ class ApplicationController < Sinatra::Base
       @user = User.find_by(:username => params[:username])
       if @user != nil && @user.password == params[:password]
         #session[:user_id] = user.id
-        #You are setting up a key :user_id in the session hash and storing the authenticated user's id user.id in it for later use
-        #Key name can be anything
+          #You are setting up a key :user_id in the session hash and storing the authenticated user's id user.id in it for later use
+          #Key name can be anything
         session[:user_id] = @user.id
           redirect to '/account'
         else
